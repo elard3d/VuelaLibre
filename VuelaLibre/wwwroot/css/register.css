@@ -1,0 +1,134 @@
+﻿/* Please see documentation at https://docs.microsoft.com/aspnet/core/client-side/bundling-and-minification
+for details on configuring this project to bundle and minify static web assets. */
+
+a.navbar-brand {
+    white-space: normal;
+    text-align: center;
+    word-break: break-all;
+}
+
+.home {
+    background-image: url("../Img/savion.jpg");
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+}
+
+#vuela {
+    font-family: 'Lobster', cursive;
+    display: inline;
+    color: red;
+}
+
+#libre {
+    font-family: 'Lobster', cursive;
+    display: inline;
+    color: blue;
+}
+
+.formulario {
+    background: rgb(128, 128, 128);
+    margin: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 30px rgb(128, 128, 128);
+}
+
+.registrar {
+    background: #222A3F;
+    padding: 10px;
+    font-size: 16px;
+    font-weight: 700 !important;
+    color: white;
+    box-shadow: 0 0 30px rgb(128, 128, 128);
+    transition: 0.5s ease-in;
+}
+
+.d {
+    font-size: 70px;
+    font-family: 'Times New Roman';
+    color: white;
+}
+
+.bl {
+    color: white;
+}
+
+.icon icon-esky-facebook {
+    icon: url(../descarga.ico);
+}
+
+.registrar:hover {
+    color: white;
+}
+/* Provide sufficient contrast against white background */
+a {
+    color: #0366d6;
+}
+
+.btn-primary {
+    color: #fff;
+    background-color: #1b6ec2;
+    border-color: #1861ac;
+}
+
+.nav-pills .nav-link.active, .nav-pills .show > .nav-link {
+    color: #fff;
+    background-color: #1b6ec2;
+    border-color: #1861ac;
+}
+
+/* Sticky footer styles
+-------------------------------------------------- */
+html {
+    font-size: 14px;
+}
+
+@media (min-width: 768px) {
+    html {
+        font-size: 16px;
+    }
+}
+
+.border-top {
+    border-top: 1px solid #e5e5e5;
+}
+
+.border-bottom {
+    border-bottom: 1px solid #e5e5e5;
+}
+
+.box-shadow {
+    box-shadow: 0 .25rem .75rem rgba(0, 0, 0, .05);
+}
+
+button.accept-policy {
+    font-size: 1rem;
+    line-height: inherit;
+}
+
+/* Sticky footer styles
+-------------------------------------------------- */
+html {
+    position: relative;
+    min-height: 100%;
+}
+
+.registro {
+    background-image: url("../Img/Avion.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+}
+
+body {
+    /* Margin bottom by footer height */
+    margin-bottom: 60px;
+}
+
+.footer {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    white-space: nowrap;
+    line-height: 60px; /* Vertically center the text there */
+}
