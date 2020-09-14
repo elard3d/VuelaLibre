@@ -114,7 +114,7 @@ html {
 }
 
 .registro {
-    background-image: url("../Img/Avion.png");
+    background-image: url("../../img/Avion.png");
     background-repeat: no-repeat;
     background-size: cover;
     background-attachment: fixed;
