@@ -8,9 +8,9 @@ namespace VuelaLibre.Controllers
 {
     public class AccountController : Controller
     {
-        public IActionResult Index()
+        public ViewResult Index()
         {
-            return View();
+            return View("Index");
         }
     }
 }
