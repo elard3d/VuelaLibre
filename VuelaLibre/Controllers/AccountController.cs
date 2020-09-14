@@ -12,5 +12,11 @@ namespace VuelaLibre.Controllers
         {
             return View("Index");
         }
+
+        public ViewResult Register()
+        {
+            return View("Register");
+        }
+
     }
 }
