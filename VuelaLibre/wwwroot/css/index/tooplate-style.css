@@ -27,8 +27,12 @@ a:focus {
 .tm-margin-b-20 { margin-bottom: 20px; }
 .tm-p-4 { padding: 2rem!important; }
 .tm-color-white { color: white; }
-.tm-color-primary {	color: #ee5057; }
-.tm-bg-primary { background: #ee5057; }
+.tm-color-primary {
+	color: #50b7ee;
+}
+.tm-bg-primary {
+	background: #50b7ee;
+}
 .tm-bg-gray { background: #F4F4F4; }
 .tm-bg-white { background: white; }
 .tm-bg-dark-blue { background: #1f3646; }
@@ -96,13 +100,13 @@ p {
 .nav-link.active,
 .nav-link:hover {
 	color: white;
-	background: #ee5057;	
+	background: #50b7ee;
 }
 
 .tm-top-bar .navbar-expand-lg .navbar-nav .nav-link { padding: 50px 35px; }
 
 .tm-top-bar {
-    position: fixed;
+    /*position: fixed;*/
     top: 0;
     left: 0;
     width: 100%;
@@ -127,9 +131,11 @@ p {
 	padding-bottom: 80px;
 }
 
-#tm-section-1 {	
-	background-image: url('../img/bg-img-1.jpg');	
-	height: 515px;
+#tm-section-1 {
+	background-image: url("../../img/bg-img-1.jpg"); 
+	background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
 }
 
 #tm-section-5 { background-image: url('../img/bg-img-2.jpg'); }
@@ -170,13 +176,13 @@ p {
 }
 
 .form-control:focus {
-	border-color: #ee5057;
+	border-color: #50b7ee;
 	box-shadow: 0 0 0 0.2rem rgba(238,80,87,.25);
 }
 
 .btn-primary {
-	background-color: #ee5057;
-	border-color: #ee5057;
+	background-color: #50b7ee;
+	border-color: #50b7ee;
 	border-radius: 0;
 	cursor: pointer;
 	font-size: 0.7rem;
@@ -197,7 +203,7 @@ p {
 .tm-form-element:last-child { margin-right: 0; }
 
 .tm-form-element-icon {
-	color: #ee5057;
+	color: #50b7ee;
 	position: absolute;
 	top: 10px;
 	left: 15px;
@@ -250,7 +256,7 @@ select.tm-select::-ms-expand { display: none; }
 .tm-pb-4 { padding-bottom: 100px; }
 
 .tm-section-2 {
-	background: #ee5057;
+	background: #50b7ee;
 	padding-top: 50px;
 	position: relative;
 }
@@ -281,11 +287,11 @@ select.tm-select::-ms-expand { display: none; }
 	text-transform: uppercase;
 }
 
-.tm-btn-white-bordered:hover,
-.tm-btn-white-bordered:focus {
-	color: #ee5057;
-	background: white;	
-}
+	.tm-btn-white-bordered:hover,
+	.tm-btn-white-bordered:focus {
+		color: #50b7ee;
+		background: white;
+	}
 
 .slick-dots { bottom: -35px; }
 
@@ -343,7 +349,9 @@ select.tm-select::-ms-expand { display: none; }
 	transition: all 0.3s ease;
 }
 
-.tm-recommended-item:hover h4 { color: #ee5057; }
+.tm-recommended-item:hover h4 {
+	color: #50b7ee;
+}
 .tm-media { align-items: stretch; }
 
 .tm-media,

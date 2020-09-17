@@ -18,5 +18,10 @@ namespace VuelaLibre.Controllers
             return View("Register");
         }
 
+        public ViewResult Login()
+        {
+            return View("Login");
+        }
+
     }
 }
