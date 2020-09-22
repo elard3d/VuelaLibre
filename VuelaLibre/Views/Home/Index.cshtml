@@ -11,20 +11,20 @@
                         <div class="form-row tm-search-form-row">
                             <div class="form-group tm-form-element tm-form-element-100">
                                 <i class="fa fa-map-marker tm-form-element-icon"></i>
-                                <input name="city" type="text" class="form-control" id="inputCity" placeholder="Escribe tu destino...">
+                                <input required name="city" type="text" class="form-control" id="inputCity" placeholder="Escribe tu destino...">
                             </div>
                             <div class="form-group tm-form-element tm-form-element-50">
                                 <i class="fa fa-calendar  tm-form-element-icon"></i>
-                                <input name="check-in" type="datetime-local" class="form-control" id="inputCheckIn" placeholder="Fecha de ida">
+                                <input required name="check-in" type="datetime-local" class="form-control" id="inputCheckIn" placeholder="Fecha de ida">
                             </div>
                             <div class="form-group tm-form-element tm-form-element-50">
                                 <i class="fa fa-calendar tm-form-element-icon"></i>
-                                <input name="check-out" type="datetime-local" class="form-control" id="inputCheckOut" placeholder="Fecha de vuelta">
+                                <input required name="check-out" type="datetime-local" class="form-control" id="inputCheckOut" placeholder="Fecha de vuelta">
                             </div>
                         </div>
                         <div class="form-row tm-search-form-row">
                             <div class="form-group tm-form-element tm-form-element-2">
-                                <select name="adult" class="form-control tm-select" id="adult">
+                                <select required name="adult" class="form-control tm-select" id="adult">
                                     <option value="">Adulto</option>
                                     <option value="1">1</option>
                                     <option value="2">2</option>
@@ -40,7 +40,7 @@
                                 <i class="fa fa-2x fa-user tm-form-element-icon"></i>
                             </div>
                             <div class="form-group tm-form-element tm-form-element-2">
-                                <select name="children" class="form-control tm-select" id="children">
+                                <select required name="children" class="form-control tm-select" id="children">
                                     <option value="">Niño</option>
                                     <option value="0">0</option>
                                     <option value="1">1</option>
@@ -75,7 +75,7 @@
 <div class="tm-section-2">
     <div class="container">
         <div class="row">
-            <div class="col text-center">
+            <div class="col text-center" >
                 <h2 class="tm-section-title">Estamos aquí para ayudarte</h2>
                 <p class="tm-color-white tm-section-subtitle">Suscríbase para recibir nuestros boletines</p>
                 <a href="#" class="tm-color-white tm-btn-white-bordered">Subscribirse</a>
@@ -88,7 +88,7 @@
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" preserveAspectRatio="none" class="tm-section-down-arrow">
         <polygon fill="#50b7ee" points="0,0  100,0  50,60"></polygon>
     </svg>
-    <div class="container tm-pt-5 tm-pb-4">
+    <div class="container tm-pt-5 tm-pb-4 ">
         <div class="col text-center">
             <h2 class="tm-section-title text-primary">Destinos Destacados </h2>
         </div>
