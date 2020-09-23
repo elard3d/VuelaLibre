@@ -1,10 +1,30 @@
-﻿.registro {
-    background-image: url("../Img/savion.jpg");
+﻿.reg {
+    background: rgba(238,80,87,.25);
+    background-image: url("/img/Avion.png");
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-size: cover;
 }
-
+.body {
+    background: url(/img/avioncito.jpg);
+    margin: 0;
+    padding: 0;
+    background-size: cover;
+    background-position: center;    
+    font-family: sans-serif;
+}
+.avatar {
+    width: 100px;
+    height: 100px;
+    position: absolute;
+    top: -26%;
+    left: calc(50% - 50px);
+}
+.titulo {
+    color: black;
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 60px;
+}
 #vuela {
     font-family: 'Lobster', cursive;
     display: inline;
@@ -18,22 +38,29 @@
 }
 
 .formulario {
-    background: rgb(128, 128, 128);
     margin: 20px;
     border-radius: 10px;
-    box-shadow: 0 0 30px rgb(128, 128, 128);
+    background: rgba(0,0,0,.1);
+    box-shadow: 0 0 30px rgba(0,0,0,.568);
 }
-
-.registrar {
-    background: #222A3F;
+.registrara {
+    background-color: darkcyan;
     padding: 10px;
     font-size: 16px;
     font-weight: 700 !important;
     color: white;
-    box-shadow: 0 0 30px rgb(128, 128, 128);
+    box-shadow: 0 0 10px;
     transition: 0.5s ease-in;
 }
-
+.a{
+    font-size: 18px;
+    font-family: 'Times New Roman', Times, serif;
+    color: black;
+}
+.boton {
+    color: black;
+    border-radius: 20px;
+}
 .d {
     font-size: 70px;
     font-family: 'Times New Roman';

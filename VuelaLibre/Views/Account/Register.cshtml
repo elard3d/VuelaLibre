@@ -2,15 +2,14 @@
     var account = (Account)Model;
 }
 
-
 <body class="registro">
     <div class="tm-section tm-bg-img" id="tm-section-1">
         <div class="container text-md-center">
             <div class="row justify-content-center pt-5 mt-5 mr-1">
-                <div class="col-md-4" formulario>
+                <div class="col-md-4 formulario">
                     <form action="/account/register" method="post">
                         <div class="form-group text-center">
-                            <h3 class="text-light">Registrate </h3>
+                            <h3 class="titulo">Registrate </h3>
                         </div>
                         <div class="form-group mx-sm-4 ">
                             <input type="text" name="Nombre" class="form-control" placeholder="Nombre" />
@@ -27,8 +26,8 @@
                         <div class="form-group mx-sm-4 pt-4">
                             <input type="password" class="form-control" placeholder="Verfificar Contraseña" />
                         </div>
-                        <div class="form-group mx-sm-4 pb-4">
-                            <input type="submit" class="btn btn-block registrar" value="Registrarse" />
+                        <div class="form-group mx-sm-4 pb-1">
+                            <input type="submit" class="btn btn-block registrara" value="Registrarse" />
                         </div>
                         <div _ngcontent-c6="" class="external-login ng-star-inserted">
 
@@ -38,14 +37,16 @@
                                  data-width="">
                             </div>
                         </div>
+                        <br />
+                    </form>
+                    <form action="/account/login" method="post">
                         <div class="form-group text-center text-light">
-                            <span><a c>¿Ya tienes Cuenta?</a></span>
-                            <button _ngcontent-c7="" class="btn btn-link boton" tabindex="0">Entrar</button>
+                            <span class="a">¿Ya tienes cuenta?</span>
+                            <button _ngcontent-c7="" class="btn btn-primary boton" tabindex="0">Entrar</button>
                         </div>
                     </form>
                 </div>
             </div>
-
         </div>
     </div>
 </body>

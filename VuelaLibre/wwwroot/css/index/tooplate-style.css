@@ -132,18 +132,18 @@ p {
 }
 
 #tm-section-1 {
-	background-image: url("../../img/avioncito.jpg"); 
+	background-image: url("/img/savion.jpg");
 	background-repeat: no-repeat;
-    background-attachment: fixed;
-    background-size: cover;
+	background-attachment: fixed;
+	background-size: cover;
 }
 
 #tm-section-5 {
-	background-image: url("../../img/avioncito.jpg");
+	background-image: url("/img/Avion.png");
 }
 
 #tm-section-6 {
-	background-image: url("../../img/avioncito.jpg");
+	background-image: url("/img/Avion.png");
 	background-position: top center;
 	padding-top: 120px;
 	padding-bottom: 60px;
@@ -298,6 +298,7 @@ select.tm-select::-ms-expand { display: none; }
 .slick-dots { bottom: -35px; }
 
 .tm-article {
+	background-image: url("/img/Avion.png");
 	padding: 40px;
 	transition: all 0.3s ease;
 }
@@ -582,4 +583,7 @@ video {
 		max-width: 530px;
 		width: 100%;
 	}	
+}
+.articulo {
+	background-image: url("../../img/Avion.png");
 }
