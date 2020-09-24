@@ -586,6 +586,12 @@ video {
 }
 .iquitos {
 	background-image: url("../../img/Iquitos.jfif");
+	width: 100%;
+	padding: 0;
+	background-attachment: fixed;
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: cover;
 }
 .tarapoto {
 	background-image: url("../../img/Tarapotp.jpg");
