@@ -28,7 +28,7 @@ a:focus {
 .tm-p-4 { padding: 2rem!important; }
 .tm-color-white { color: white; }
 .tm-color-primary {
-	color: #50b7ee;
+	color: #4efff4;
 }
 .tm-bg-primary {
 	background: #50b7ee;
@@ -59,9 +59,10 @@ a.tm-color-primary:active {
 .tm-font-normal { font-weight: 400; }
 .tm-font-semibold { font-weight: 600; }
 
-p { 
-	color: #898989; 
-	line-height: 1.9;
+p {
+	color: #d792ff;
+	font-size: 24px;
+	font-weight: bolder;
 }
 
 .navbar { 
@@ -136,17 +137,6 @@ p {
 	background-repeat: no-repeat;
 	background-attachment: fixed;
 	background-size: cover;
-}
-
-#tm-section-5 {
-	background-image: url("/img/Avion.png");
-}
-
-#tm-section-6 {
-	background-image: url("../../img/avioncito.jpg");
-	background-position: top center;
-	padding-top: 120px;
-	padding-bottom: 60px;
 }
 
 .tm-bg-img {
@@ -265,18 +255,21 @@ select.tm-select::-ms-expand { display: none; }
 
 .tm-section-title {
 	color: white;
+	font-family:'Century Gothic';
 	font-size: 3rem;
 }
 
 .tm-section-title-2 {
-	font-size: 3.2rem;
-    font-weight: 600;
+	color: slateblue;
+	font-family: 'Century Gothic';
+	font-size: 4rem;
 }
 
 .tm-section-subtitle {
-	font-size: 1rem;
+	font-size: 1.5rem;
+	font-family: 'Century Gothic';
 	font-weight: 300;
-	margin-bottom: 25px;
+	margin-bottom: 20px;
 }
 
 .tm-section-subtitle-2 { font-size: 1.8rem; }
@@ -293,6 +286,7 @@ select.tm-select::-ms-expand { display: none; }
 	.tm-btn-white-bordered:focus {
 		color: #50b7ee;
 		background: white;
+		font-size:3rem;
 	}
 
 .slick-dots { bottom: -35px; }
@@ -584,6 +578,7 @@ video {
 	padding: 6%;
 	top: 0px;
 	bottom: 0px;
+	text-shadow: 5px 5px 5px black;
 	background-position: center;
 	background-repeat: no-repeat;
 	background-size: cover;
@@ -596,6 +591,7 @@ video {
 	padding: 6%;
 	top: 0px;
 	bottom: 0px;
+	text-shadow: 5px 5px 5px black;
 	background-position: center;
 	background-repeat: no-repeat;
 	background-size: cover;
@@ -608,6 +604,7 @@ video {
 	padding: 6%;
 	top: 0px;
 	bottom: 0px;
+	text-shadow: 5px 5px 5px black;
 	background-position: center;
 	background-repeat: no-repeat;
 	background-size: cover;
@@ -620,15 +617,17 @@ video {
 	padding: 6%;
 	top: 0px;
 	bottom: 0px;
+	text-shadow: 5px 5px 5px black;
 	background-position: center;
 	background-repeat: no-repeat;
 	background-size: cover;
-	background-image: url("../../img/cajamarca.jpg");
+	background-image: url("../../img/cajamarca.png");
 }
 
 .trujillo {
 	width: 6%;
 	padding: 6%;
+	text-shadow: 5px 5px 5px black;
 	background-position: center;
 	background-repeat: no-repeat;
 	background-size: cover;
@@ -639,8 +638,9 @@ video {
 	margin: 0;
 	width: 6%;
 	padding: 6%;
+	text-shadow: 5px 5px 5px black;
 	background-position: center;
 	background-repeat: no-repeat;
 	background-size: cover;
-	background-image: url("../../img/piura.jpg");
+	background-image: url("../../img/piura.png");
 }

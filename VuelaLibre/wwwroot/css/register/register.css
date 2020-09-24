@@ -1,19 +1,4 @@
-﻿.reg {
-    background: rgba(238,80,87,.25);
-    background-image: url("/img/Avion.png");
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-    background-size: cover;
-}
-.body {
-    background: url(/img/avioncito.jpg);
-    margin: 0;
-    padding: 0;
-    background-size: cover;
-    background-position: center;    
-    font-family: sans-serif;
-}
-.avatar {
+﻿.avatar {
     width: 100px;
     height: 100px;
     position: absolute;
