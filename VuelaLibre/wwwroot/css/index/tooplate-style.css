@@ -579,26 +579,68 @@ video {
 	}	
 }
 .iquitos {
-	background-image: url("../../img/Iquitos.jfif");
-	width: 100%;
-	padding: 0;
-	background-attachment: fixed;
+	margin: 0;
+	width: 6%;
+	padding: 6%;
+	top: 0px;
+	bottom: 0px;
 	background-position: center;
 	background-repeat: no-repeat;
 	background-size: cover;
+	background-image: url("../../img/iquitoss.jpg");
 }
+
 .tarapoto {
+	margin: 0;
+	width: 6%;
+	padding: 6%;
+	top: 0px;
+	bottom: 0px;
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: cover;
 	background-image: url("../../img/Tarapotp.jpg");
 }
+
 .arequipa {
+	margin: 0;
+	width: 6%;
+	padding: 6%;
+	top: 0px;
+	bottom: 0px;
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: cover;
 	background-image: url("../../img/arequipa.png");
 }
+
 .cajamarca {
+	margin: 0;
+	width: 6%;
+	padding: 6%;
+	top: 0px;
+	bottom: 0px;
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: cover;
 	background-image: url("../../img/cajamarca.jpg");
 }
+
 .trujillo {
+	width: 6%;
+	padding: 6%;
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: cover;
 	background-image: url("../../img/trujillo.jpg");
 }
+
 .piura {
+	margin: 0;
+	width: 6%;
+	padding: 6%;
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: cover;
 	background-image: url("../../img/piura.jpg");
 }
