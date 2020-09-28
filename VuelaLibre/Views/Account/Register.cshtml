@@ -9,23 +9,27 @@
                 <div class="col-md-4 formulario">
                     <form action="/account/register" method="post">
                         <div class="form-group text-center">
-                            <br />
                             <h3 class="titulo">Registrate </h3>
                         </div>
                         <div class="form-group mx-sm-4 ">
                             <input type="text" name="Nombre" class="form-control" placeholder="Nombre" />
+                            @Html.ValidationMessage("Nombre")
                         </div>
                         <div class="form-group mx-sm-4 pt-4">
                             <input type="text" name="Apellido" class="form-control" placeholder="Apellidos" />
+                            @Html.ValidationMessage("Apellido")
                         </div>
                         <div class="form-group mx-sm-4 pt-4">
                             <input type="text" name="Correo" class="form-control" placeholder="Correo" />
+                            @Html.ValidationMessage("Correo")
                         </div>
                         <div class="form-group mx-sm-4 pt-4">
                             <input type="password" name="Contraseña" class="form-control" placeholder="Contraseña" />
+                            @Html.ValidationMessage("Contraseña")
                         </div>
                         <div class="form-group mx-sm-4 pt-4">
-                            <input type="password" class="form-control" placeholder="Verfificar Contraseña" />
+                            <input type="password" name="VerfContraseña" class="form-control" placeholder="Verfificar Contraseña" />
+                            @Html.ValidationMessage("VerfContraseña")
                         </div>
                         <div class="form-group mx-sm-4 pb-1">
                             <input type="submit" class="btn btn-block registrara" value="Registrarse" />
@@ -40,10 +44,10 @@
                         </div>
                         <br />
                     </form>
-                    <form action="/account/login" method="post">
+                    <form action="/account/login" method="get">
                         <div class="form-group text-center text-light">
-                            <span class="a"><b>¿Ya tienes cuenta? </b></span>
-                            <button _ngcontent-c7="" class="btn btn-primary boton" tabindex="0">Inicia Sesion</button>
+                            <span class="a">¿Ya tienes cuenta?</span>
+                            <button _ngcontent-c7="" class="btn btn-primary boton" tabindex="0">Entrar</button>
                         </div>
                     </form>
                 </div>

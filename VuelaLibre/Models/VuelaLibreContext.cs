@@ -7,10 +7,11 @@ using VuelaLibre.Models.Maps;
 
 namespace VuelaLibre.Models
 {
-    public class VuelaLibreContext: DbContext
+    public class VuelaLibreContext : DbContext
     {
         //Esto se hace por cada tabla de base de datos
         public DbSet<Account> Accounts { get; set; }
+        public DbSet<Vuelos> Vuelo { get; set; }
 
         public VuelaLibreContext(DbContextOptions<VuelaLibreContext> options)
             : base(options) { }
@@ -21,6 +22,7 @@ namespace VuelaLibre.Models
 
             //Esto se hace por cada tabla de base de datos
             modelBuilder.ApplyConfiguration(new AccountMap());
+            modelBuilder.ApplyConfiguration(new VueloMap());
         }
     }
 }

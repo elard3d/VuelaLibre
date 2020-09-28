@@ -7,12 +7,13 @@ using System.Threading.Tasks;
 
 namespace VuelaLibre.Models.Maps
 {
-    public class AccountMap : IEntityTypeConfiguration<Account>
+    public class VueloMap: IEntityTypeConfiguration<Vuelos>
     {
-        public void Configure(EntityTypeBuilder<Account> builder)
+        public void Configure(EntityTypeBuilder<Vuelos> builder)
         {
-            builder.ToTable("Register");
-            builder.HasKey(o => o.Id);
+                builder.ToTable("CrearVuelo");
+                builder.HasKey(o => o.Id);
         }
+        
     }
 }
