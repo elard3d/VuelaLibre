@@ -5,6 +5,7 @@ Template 2095 Level
 http://www.tooplate.com/view/2095-level
 
 */
+
 body {
     font-family: 'Open Sans', Helvetica, Arial, sans-serif;
     font-size: 13px;
@@ -51,7 +52,7 @@ a, button {
 }
 
 .tm-color-primary {
-    color: #4efff4;
+    color: #5feedb;
 }
 
 .tm-bg-primary {
@@ -102,7 +103,7 @@ a, button {
 
 a.tm-color-primary:hover,
 a.tm-color-primary:active {
-    color: #d53239;
+    color: #015ea3;
 }
 
 .tm-font-light {
@@ -735,9 +736,12 @@ video {
 }
 
 .iquitos {
-    width: 100%;
-    padding: 5%;
-    text-shadow: 5px 5px 5px black;
+    margin: 0;
+    width: 6%;
+    padding: 6%;
+    top: 0px;
+    bottom: 0px;
+    text-shadow: 0px 0px 15px black;
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
@@ -745,9 +749,12 @@ video {
 }
 
 .tarapoto {
-    width: 100%;
-    padding: 5%;
-    text-shadow: 5px 5px 5px black;
+    margin: 0;
+    width: 6%;
+    padding: 6%;
+    top: 0px;
+    bottom: 0px;
+    text-shadow: 0px 0px 15px black;
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
@@ -755,9 +762,12 @@ video {
 }
 
 .arequipa {
-    width: 100%;
-    padding: 5%;
-    text-shadow: 5px 5px 5px black;
+    margin: 0;
+    width: 6%;
+    padding: 6%;
+    top: 0px;
+    bottom: 0px;
+    text-shadow: 0px 0px 15px black;
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
@@ -765,9 +775,12 @@ video {
 }
 
 .cajamarca {
-    width: 100%;
-    padding: 5%;
-    text-shadow: 5px 5px 5px black;
+    margin: 0;
+    width: 6%;
+    padding: 6%;
+    top: 0px;
+    bottom: 0px;
+    text-shadow: 0px 0px 15px black;
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
@@ -775,9 +788,9 @@ video {
 }
 
 .trujillo {
-    width: 100%;
-    padding: 5%;
-    text-shadow: 5px 5px 5px black;
+    width: 6%;
+    padding: 6%;
+    text-shadow: 0px 0px 15px black;
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
@@ -785,14 +798,12 @@ video {
 }
 
 .piura {
-    width: 100%;
-    padding: 5%;
-    text-shadow: 5px 5px 5px black;
+    margin: 0;
+    width: 6%;
+    padding: 6%;
+    text-shadow: 0px 0px 15px black;
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
     background-image: url("../../img/piura.png");
-}
-.carrousel {
-    top: -90px;
 }

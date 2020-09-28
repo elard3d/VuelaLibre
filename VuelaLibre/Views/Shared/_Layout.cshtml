@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="icon" href="~/img/avioncito.jpg" />
+
     <title>VuelaLibre</title>
 
     <link href="~/lib/font-awesome/css/all.css" rel="stylesheet" />
@@ -27,7 +27,7 @@
                 <div class="row">
                     <nav class="navbar navbar-expand-lg narbar-light">
                         <a class="navbar-brand mr-auto" asp-area="" asp-controller="Account" asp-action="">
-                            <img src="~/img/logo.jpg">
+                            <img class="logo" src="~/img/logoOriginal.jpg">
 
                         </a>
                         <button type="button" id="nav-toggle" class="navbar-toggler collapsed" data-toggle="collapse" data-target="#mainNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -39,6 +39,7 @@
                                     <a class="nav-link" asp-area="" asp-controller="Account" asp-action="">Home</a>
                                 </li>
                                 <li class="nav-item">
+
                                     <a class="nav-link" asp-area="" asp-controller="Home" asp-action="">Vuelos</a>
                                 </li>
                                 <li class="nav-item">
@@ -47,19 +48,16 @@
                                 <li class="nav-item">
                                     <a class="nav-link" asp-area="" asp-controller="Home" asp-action="">Aerolíneas</a>
                                 </li>
-                                <li class="nav-item">
-                                    <a class="nav-link" asp-area="" asp-controller="Account" asp-action="CrearVuelo">Crear Vuelos</a>
-                                </li>
                             </ul>
                         </div>
                         <div class="navbar-collapse collapse d-sm-inline-flex flex-sm-row-reverse">
                             <ul class="navbar-nav">
                                 <li>
-                                    <a class="nav-link text-dark" asp-area="" asp-controller="Account" asp-action="Register">Registrarse <i class="fas fa-angle-right"></i> </a>
+                                    <a class="nav-link text-dark" asp-area="" asp-controller="Account" asp-action="Register"><b>Registrarse </b><i class="fas fa-angle-right"></i> </a>
 
                                 </li>
                                 <li>
-                                    <a class="nav-link text-dark" asp-area="" asp-controller="Account" asp-action="Login">Iniciar Sesión <i class="fas fa-sign-in-alt"></i></a>
+                                    <a class="nav-link text-dark" asp-area="" asp-controller="Account" asp-action="Login"><b>Iiniciar Sessión </b><i class=" fas fa-sign-in-alt"></i></a>
 
                                 </li>
                             </ul>
