@@ -26,7 +26,6 @@ namespace VuelaLibre.Controllers
         }
 
         [HttpGet]
-        [Authorize]
         public IActionResult Index()
         {
             return View("Index");
@@ -43,9 +42,8 @@ namespace VuelaLibre.Controllers
         }
 
         [HttpPost]
-        public ActionResult Register(Account account) // POST
+        public ActionResult Register(Account account, string contraseña) // POST
         {
-
             if (ModelState.IsValid)
             {
                 _context.Accounts.Add(account);

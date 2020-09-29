@@ -22,9 +22,13 @@ namespace VuelaLibre.Models
         public string Correo { get; set; }
         [Required]
         [MinLength(6)]
+        [DataType(DataType.Password)]
         public string Contraseña { get; set; }
         [Required]
         [MinLength(6)]
+        [DataType(DataType.Password)]
+        [Display(Name = "Confirmar contraseña")]
+        [Compare("Contraseña", ErrorMessage = "las contraseñas no coinciden")]
         public string VerfContraseña { get; set; }
     }
 }
