@@ -13,8 +13,10 @@ namespace VuelaLibre.Models.Maps
         public string Origen { get; set; }
         public string Destino { get; set; }
         public string Aerolinea { get; set; }
-        public DateTime Fecha {get; set;}
-        public TimeSpan HoraVuelo { get; set; }
+        public DateTime FechaIda {get; set;}
+        public TimeSpan HoraSalida { get; set; }
+        public DateTime FechaRegreso { get; set; }
+        public TimeSpan HoraRegreso { get; set; }
         public int TiempoVuelo { get; set; }
         public int TotalPasaje { get; set; }
         public decimal Precio { get; set; }
