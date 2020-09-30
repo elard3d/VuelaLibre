@@ -736,12 +736,9 @@ video {
 }
 
 .iquitos {
-    margin: 0;
-    width: 6%;
-    padding: 6%;
-    top: 0px;
-    bottom: 0px;
-    text-shadow: 0px 0px 15px black;
+    width: 100%;
+    padding: 5%;
+    text-shadow: 5px 5px 5px black;
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
@@ -749,12 +746,9 @@ video {
 }
 
 .tarapoto {
-    margin: 0;
-    width: 6%;
-    padding: 6%;
-    top: 0px;
-    bottom: 0px;
-    text-shadow: 0px 0px 15px black;
+    width: 100%;
+    padding: 5%;
+    text-shadow: 5px 5px 5px black;
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
@@ -762,12 +756,9 @@ video {
 }
 
 .arequipa {
-    margin: 0;
-    width: 6%;
-    padding: 6%;
-    top: 0px;
-    bottom: 0px;
-    text-shadow: 0px 0px 15px black;
+    width: 100%;
+    padding: 5%;
+    text-shadow: 5px 5px 5px black;
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
@@ -775,12 +766,9 @@ video {
 }
 
 .cajamarca {
-    margin: 0;
-    width: 6%;
-    padding: 6%;
-    top: 0px;
-    bottom: 0px;
-    text-shadow: 0px 0px 15px black;
+    width: 100%;
+    padding: 5%;
+    text-shadow: 5px 5px 5px black;
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
@@ -788,9 +776,9 @@ video {
 }
 
 .trujillo {
-    width: 6%;
-    padding: 6%;
-    text-shadow: 0px 0px 15px black;
+    width: 100%;
+    padding: 5%;
+    text-shadow: 5px 5px 5px black;
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
@@ -798,12 +786,15 @@ video {
 }
 
 .piura {
-    margin: 0;
-    width: 6%;
-    padding: 6%;
-    text-shadow: 0px 0px 15px black;
+    width: 100%;
+    padding: 5%;
+    text-shadow: 5px 5px 5px black;
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
     background-image: url("../../img/piura.png");
+}
+
+.carrousel {
+    top: -90px;
 }
