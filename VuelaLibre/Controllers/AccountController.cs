@@ -43,10 +43,12 @@ namespace VuelaLibre.Controllers
         }
 
         [HttpPost]
-        public ActionResult Register(Account account, string contraseña) // POST
+        public ActionResult Register(Account account, string contraseña, string verfcontraseña) // POST
         {
             if (ModelState.IsValid)
             {
+                account.Contraseña = CreateHash(contraseña);
+                account.VerfContraseña = CreateHash(verfcontraseña);
                 _context.Accounts.Add(account);
                 _context.SaveChanges();
                 return RedirectToAction("Index");
@@ -61,7 +63,7 @@ namespace VuelaLibre.Controllers
         [HttpPost]
         public IActionResult Login(string Correo, string Contraseña)
         {
-            var user = _context.Accounts.Where(o => o.Correo == Correo && o.Contraseña == Contraseña)
+            var user = _context.Accounts.Where(o => o.Correo == Correo && o.Contraseña == CreateHash(Contraseña))
                 .FirstOrDefault();
             if (user != null)
             {
@@ -97,21 +99,40 @@ namespace VuelaLibre.Controllers
         [HttpGet]
         public ActionResult CrearVuelo() // GET
         {
-            return View(new Vuelos());
+            return View(new Vuelo());
         }
 
         [HttpPost]
-        public ActionResult CrearVuelo(Vuelos vuelo) // POST
+        public ActionResult CrearVuelo(Vuelo vuel) // POST
         {
 
             if (ModelState.IsValid)
             {
-                _context.Vuelo.Add(vuelo);
+                _context.Vuelos.Add(vuel);
                 _context.SaveChanges();
                 return RedirectToAction("Index");
             }
+            return View(vuel);
+        }
+
+        [HttpGet]
+        public ActionResult MostrarVuelos()
+        {
+            var vuelo =  _context.Vuelos.ToList();
+           // ViewBag.vuelos = _context.Vuelos.ToList();
             return View(vuelo);
         }
-        
+        [HttpPost]
+        public ActionResult Buscar(Vuelo vuelo, string origen)
+        {
+            var mostrar = _context.Vuelos.Where(o => o.Origen == origen)
+                .FirstOrDefault();
+            if (mostrar != null)
+            {
+                return View(mostrar);
+            }
+            return View();
+        }
+
     }
 }

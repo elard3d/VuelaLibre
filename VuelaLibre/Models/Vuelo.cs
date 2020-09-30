@@ -5,9 +5,9 @@ using System.Threading;
 using System.Threading.Tasks;
 using System.Timers;
 
-namespace VuelaLibre.Models.Maps
+namespace VuelaLibre.Models
 {
-    public class Vuelos
+    public class Vuelo
     {
         public int Id { get; set; }
         public string Origen { get; set; }

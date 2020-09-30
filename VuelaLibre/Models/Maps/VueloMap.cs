@@ -7,9 +7,9 @@ using System.Threading.Tasks;
 
 namespace VuelaLibre.Models.Maps
 {
-    public class VueloMap: IEntityTypeConfiguration<Vuelos>
+    public class VueloMap: IEntityTypeConfiguration<Vuelo>
     {
-        public void Configure(EntityTypeBuilder<Vuelos> builder)
+        public void Configure(EntityTypeBuilder<Vuelo> builder)
         {
                 builder.ToTable("CrearVuelo");
                 builder.HasKey(o => o.Id);
