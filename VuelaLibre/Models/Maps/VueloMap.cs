@@ -11,7 +11,7 @@ namespace VuelaLibre.Models.Maps
     {
         public void Configure(EntityTypeBuilder<Vuelo> builder)
         {
-                builder.ToTable("CrearVuelo");
+                builder.ToTable("Vuelo");
                 builder.HasKey(o => o.Id);
         }
         
