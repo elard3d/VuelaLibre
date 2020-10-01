@@ -1,7 +1,7 @@
 ﻿@{
-    //List<Vuelo> vuelo = ((List<Vuelo>)Model);
+    List<Vuelo> vuelo = ((List<Vuelo>)Model);
     //var vuelos = ((List<Vuelo>)ViewBag.vuelo);
-    var vuelo = (Vuelo)Model;
+    //var vuelo = (Vuelo)Model;
 }
 
 <table class="table">
@@ -10,33 +10,27 @@
             <th>Origen</th>
             <th>Destino</th>
             <th>Aerolinea</th>
-            <th>Fecha de Salida</th>
-            <th>Hora de Salida</th>
-            <th>Fecha de Regreso</th>
-            <th>Hora de regreso</th>
-            <th>Tiempo de Vuelta</th>
+            <th>Fecha de Salida/Hora</th>
+            <th>Fecha de Regreso/Hora</th>
+            <th>Tiempo de Vuelo</th>
             <th>Núm. de Pasajes</th>
-            <th>precio</th>
+            <th>Precio</th>
         </tr>
     </thead>
 
     <tbody>
-        @{ 
+        @{ foreach (var item in vuelo) { 
             <tr>
-                <td>@vuelo.Origen</td>
-                <td>@vuelo.Destino</td>
-                <td>@vuelo.Aerolinea</td>
-                <td>@vuelo.FechaIda</td>
-                <td>@vuelo.HoraSalida</td>
-                <td>@vuelo.FechaRegreso</td>
-                <td>@vuelo.HoraRegreso</td>
-                <td>@vuelo.TiempoVuelo</td>
-                <td>@vuelo.TotalPasaje</td>
-                <td>@vuelo.Precio S/.</td>
+                <td>@item.Origen</td>
+                <td>@item.Destino</td>
+                <td>@item.Aerolinea</td>
+                <td>@item.FechaIda</td>
+                <td>@item.FechaRegreso</td>
+                <td>@item.TiempoVuelo H</td>
+                <td>@item.TotalPasaje</td>
+                <td>@item.Precio S/.</td>
             </tr>
+            }
         }
-
-
-
     </tbody>
 </table>

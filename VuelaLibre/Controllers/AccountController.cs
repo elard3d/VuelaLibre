@@ -126,13 +126,13 @@ namespace VuelaLibre.Controllers
         public ActionResult Buscar(Vuelo vuelo, string origen,string destino)
         {
 
-            var mostrar = _context.Vuelos.Where(o => o.Origen == origen||o.Destino==destino)
-                .FirstOrDefault();
+            var mostrar = _context.Vuelos.Where(o => o.Origen == origen && o.Destino==destino)
+                .ToList();
             if (mostrar != null)
             {
                 return View(mostrar);
             }
-            return View();
+            return View(vuelo);
         }
 
     }
