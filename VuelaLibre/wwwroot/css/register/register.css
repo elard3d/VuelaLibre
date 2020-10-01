@@ -1,37 +1,50 @@
-﻿.registro {
-    background-image: url("../Img/savion.jpg");
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-    background-size: cover;
+﻿.avatar {
+    width: 100px;
+    height: 100px;
+    position: absolute;
+    top: -26%;
+    left: calc(50% - 50px);
 }
 
-#vuela {
-    font-family: 'Lobster', cursive;
-    display: inline;
+.messageerror {
     color: red;
 }
 
-#libre {
-    font-family: 'Lobster', cursive;
-    display: inline;
-    color: blue;
+.titulo {
+    color: mediumpurple;
+    font-family: 'Century Gothic';
+    font-size: 50px;
 }
 
 .formulario {
-    background: rgb(128, 128, 128);
     margin: 20px;
     border-radius: 10px;
-    box-shadow: 0 0 30px rgb(128, 128, 128);
+    background: #ffffff;
+    box-shadow: 0 0 30px rgba(0,0,0,.568);
 }
 
-.registrar {
-    background: #222A3F;
+.registrara {
+    background-color: paleturquoise;
+    font-family: 'Century Gothic';
     padding: 10px;
-    font-size: 16px;
+    font-size: 15px;
     font-weight: 700 !important;
-    color: white;
-    box-shadow: 0 0 30px rgb(128, 128, 128);
+    color: black;
     transition: 0.5s ease-in;
+}
+
+.a {
+    font-size: 15px;
+    font-family: 'Century Gothic';
+    color: black;
+}
+
+.boton {
+    color: black;
+    background-color: paleturquoise;
+    font-family: 'Century Gothic';
+    border-radius: 5px;
+    border-color: paleturquoise;
 }
 
 .d {
@@ -50,4 +63,9 @@
 
 .registrar:hover {
     color: white;
+}
+
+.logo {
+    width: 230px;
+    height: 100px;
 }

@@ -1,41 +1,39 @@
-﻿@*
-    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
-*@
-@{
+﻿@{
+    var account = (Account)Model;
 }
-
 
 <body class="registro">
     <div class="tm-section tm-bg-img" id="tm-section-1">
         <div class="container text-md-center">
-
             <div class="row justify-content-center pt-5 mt-5 mr-1">
-                <div class="col-md-4" formulario>
-                    <form action="" method="post">
+                <div class="col-md-4 formulario">
+                    <form action="/account/register" method="post">
                         <div class="form-group text-center">
-                            <h3 class="text-light">Registrate </h3>
-
+                            <br />
+                            <h3 class="titulo">Registrate </h3>
                         </div>
                         <div class="form-group mx-sm-4 ">
-                            <input type="text" name="name" class="form-control" placeholder="Nombre" />
+                            <input type="text" name="Nombre" class="form-control" placeholder="Nombre" />
+                            @Html.ValidationMessage("Nombre")
                         </div>
                         <div class="form-group mx-sm-4 pt-4">
-                            <input type="text" name="lastname" class="form-control" placeholder="Apellidos" />
+                            <input type="text" name="Apellido" class="form-control" placeholder="Apellidos" />
+                            @Html.ValidationMessage("Apellido")
                         </div>
                         <div class="form-group mx-sm-4 pt-4">
-                            <input type="text" name="email" class="form-control" placeholder="Correo" />
+                            <input type="text" name="Correo" class="form-control" placeholder="Correo" />
+                            @Html.ValidationMessage("Correo")
                         </div>
                         <div class="form-group mx-sm-4 pt-4">
-                            <input type="text" name="user" class="form-control" placeholder="Nombre de Usuario" />
+                            <input type="password" name="Contraseña" class="form-control" placeholder="Contraseña" />
+                            @Html.ValidationMessage("Contraseña")
                         </div>
                         <div class="form-group mx-sm-4 pt-4">
-                            <input type="password" name="password" class="form-control" placeholder="Contraseña" />
+                            <input type="password" name="VerfContraseña" class="form-control" placeholder="Verfificar Contraseña" />
+                            <span class="messageerror">@Html.ValidationMessage("VerfContraseña")</span>
                         </div>
-                        <div class="form-group mx-sm-4 pt-4">
-                            <input type="password" name="password2" class="form-control" placeholder="Verfificar Contraseña" />
-                        </div>
-                        <div class="form-group mx-sm-4 pb-4">
-                            <input type="submit" class="btn btn-block registrar" value="Registrarse" />
+                        <div class="form-group mx-sm-4 pb-1">
+                            <input type="submit" class="btn btn-block registrara" value="Registrarse" />
                         </div>
                         <div _ngcontent-c6="" class="external-login ng-star-inserted">
 
@@ -45,14 +43,16 @@
                                  data-width="">
                             </div>
                         </div>
+                        <br />
+                    </form>
+                    <form action="/account/login" method="get">
                         <div class="form-group text-center text-light">
-                            <span><a c>¿Ya tienes Cuenta?</a></span>
-                            <button _ngcontent-c7="" class="btn btn-link boton" tabindex="0">Entrar</button>
+                            <span class="a">¿Ya tienes cuenta?</span>
+                            <button _ngcontent-c7="" class="btn btn-primary boton" tabindex="0">Entrar</button>
                         </div>
                     </form>
                 </div>
             </div>
-
         </div>
     </div>
 </body>
