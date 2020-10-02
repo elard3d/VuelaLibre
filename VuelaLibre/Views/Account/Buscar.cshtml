@@ -4,33 +4,50 @@
     //var vuelo = (Vuelo)Model;
 }
 
-<table class="table">
-    <thead>
-        <tr>
-            <th>Origen</th>
-            <th>Destino</th>
-            <th>Aerolinea</th>
-            <th>Fecha de Salida/Hora</th>
-            <th>Fecha de Regreso/Hora</th>
-            <th>Tiempo de Vuelo</th>
-            <th>Núm. de Pasajes</th>
-            <th>Precio</th>
-        </tr>
-    </thead>
+<div class="tm-section tm-bg-img" id="tm-section-1">
 
-    <tbody>
-        @{ foreach (var item in vuelo) { 
-            <tr>
-                <td>@item.Origen</td>
-                <td>@item.Destino</td>
-                <td>@item.Aerolinea</td>
-                <td>@item.FechaIda</td>
-                <td>@item.FechaRegreso</td>
-                <td>@item.TiempoVuelo H</td>
-                <td>@item.TotalPasaje</td>
-                <td>@item.Precio S/.</td>
-            </tr>
-            }
-        }
-    </tbody>
-</table>
+    <div class="tm-bg-white">
+
+        <div class="table-responsive">
+
+            <div class="container ie-h-align-center-fix">
+                <table class="table table-striped">
+                    <thead>
+                        <tr>
+                            <th>Origen</th>
+                            <th>Destino</th>
+                            <th>Aerolinea</th>
+                            <th>Fecha de Salida / Hora</th>
+                            <th>Tiempo de Vuelo</th>
+                            <th>Fecha de Llegada / Hora</th>
+                            <th>Cantidad de Pasajeros</th>
+                            <th>Precio</th>
+                        </tr>
+                    </thead>
+
+                    <tbody>
+                        @foreach (var item in vuelo)
+                        {
+
+                            <tr>
+                                <td><b>@item.Origen </b> <i class="fa fas fa-plane-departure tm-color-primary tm-margin-b-20"></i></td>
+                                <td><b>@item.Destino </b> <i class="fa fas fa-plane-arrival tm-color-primary tm-margin-b-20"></i></td>
+                                <td>@item.Aerolinea <i class="fa fas fa-plane tm-color-primary tm-margin-b-20"></i> </td>
+                                <td>@item.FechaIda <i class="fa fas fa-plane-departure tm-color-primary tm-margin-b-20"></i> </td>
+                                <td>@item.TiempoVuelo Min. <i class="fa fas fa-stopwatch tm-color-primary tm-margin-b-20"></i> </td>
+                                <td>@item.FechaRegreso <i class="fa fas fa-plane-arrival tm-color-primary tm-margin-b-20"></i> </td>
+                                <td>@item.TotalPasaje <i class="fa fas fa-users tm-color-primary  tm-margin-b-20"></i> </td>
+                                <td>$ @item.Precio <i class="fa fas fa-money-bill tm-color-primary tm-margin-b-20"></i> </td>
+                            </tr>
+                        }
+
+
+
+                    </tbody>
+                </table>
+
+            </div>
+
+        </div>
+
+    </div>

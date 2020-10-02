@@ -11,7 +11,7 @@ namespace VuelaLibre.Models.Maps
     {
         public void Configure(EntityTypeBuilder<Account> builder)
         {
-            builder.ToTable("Register");
+            builder.ToTable("Account");
             builder.HasKey(o => o.Id);
         }
     }
