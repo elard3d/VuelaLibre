@@ -1,7 +1,4 @@
-﻿@{
-    var vuelo = (Vuelo)Model;
-}
-
+﻿
 <body class="registro">
     <div class="tm-section tm-bg-img" id="tm-section-1">
         <div class="container text-md-center">
@@ -12,44 +9,46 @@
                             <h3 class="titulo">Crear Vuelos </h3>
                         </div>
                         <div class="form-group mx-sm-4 ">
-                            Origen
-                            <input type="text" name="Origen" class="form-control" placeholder="Origen" />
-                            @Html.ValidationMessage("Origen");
+                            <select name="Origen" class="form-control-file text-center">
+                                <option value="">----- ORIGEN -----</option>
+                                @foreach (var item in ViewBag.Flights)
+                                {
+                                    <option value="@item.Name">@item.Name</option>
+                                }
+                            </select>
                         </div>
                         <div class="form-group mx-sm-4 pt-4">
-                            Destino
-                            <input type="text" name="Destino" class="form-control" placeholder="Destino" />
-                            @Html.ValidationMessage("Destino");
+                            <select name="Destino" class="form-control-file text-center">
+                                <option value="">----- DESTINO -----</option>
+                                @foreach (var item in ViewBag.Flights)
+                                {
+                                    <option value="@item.Name">@item.Name</option>
+                                }
+                            </select>
                         </div>
                         <div class="form-group mx-sm-4 pt-4">
-                            Aerolinea
                             <input type="text" name="Aerolinea" class="form-control" placeholder="Aerolinea" />
-                            @Html.ValidationMessage("Aerolinea");
+                            @Html.ValidationMessage("Aerolinea")
                         </div>
                         <div class="form-group mx-sm-4 pt-4">
-                            Fecha/ Hora de Salida
-                            <input type="text" name="FechaIda" class="form-control" value="@vuelo.FechaIda" placeholder="Fecha de salida" />
-                            @Html.ValidationMessage("FechaIda");
+                            <input type="datetime-local" name="FechaIda" class="form-control" placeholder="Fecha de salida" />
+                            @Html.ValidationMessage("FechaIda")
                         </div>
                         <div class="from-group mx-sm-4 pt-4">
-                            Fecha/ Hora de Llegada
-                            <input type="text" name="FechaRegreso" class="form-control" value="@vuelo.FechaRegreso" placeholder="Fecha de regreso" />
-                            @Html.ValidationMessage("FechaRegreso");
+                            <input type="datetime-local" name="FechaRegreso" class="form-control" placeholder="Fecha de regreso" />
+                            @Html.ValidationMessage("FechaRegreso")
                         </div>
                         <div class="form-group mx-sm-4 pt-4">
-                            Tiempo de Vuelo
                             <input type="text" name="TiempoVuelo" class="form-control" placeholder="Tiempo de Vuelo" />
-                            @Html.ValidationMessage("TiempoVuelo");
+                            @Html.ValidationMessage("TiempoVuelo")
                         </div>
                         <div class="form-group mx-sm-4 pt-4">
-                            Total Pasajes
                             <input type="number" name="TotalPasaje" class="form-control" placeholder="Total de pasajes" />
-                            @Html.ValidationMessage("TotalPasaje");
+                            @Html.ValidationMessage("TotalPasaje")
                         </div>
                         <div class="form-group mx-sm-4 pt-4">
-                            Precio
                             <input type="text" name="Precio" class="form-control" placeholder="Precio" />
-                            @Html.ValidationMessage("Precio");
+                            @Html.ValidationMessage("Precio")
                         </div>
                         <div class="form-group mx-sm-4 pb-1">
                             <input type="submit" class="btn btn-block registrara" value="Crear" />

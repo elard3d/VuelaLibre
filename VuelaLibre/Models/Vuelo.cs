@@ -18,7 +18,7 @@ namespace VuelaLibre.Models
         [Required]
         public string Aerolinea { get; set; }
         [Required]
-        public DateTime FechaIda {get; set;}
+        public DateTime FechaIda { get; set; }
         [Required]
         public DateTime FechaRegreso { get; set; }
         [Required]

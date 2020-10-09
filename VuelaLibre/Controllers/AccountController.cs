@@ -99,7 +99,8 @@ namespace VuelaLibre.Controllers
         [HttpGet]
         public ActionResult CrearVuelo() // GET
         {
-            return View(new Vuelo());
+            ViewBag.Flights = _context.ListVuelo.ToList();
+            return View("CrearVuelo");
         }
 
         [HttpPost]
