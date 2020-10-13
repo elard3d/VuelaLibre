@@ -52,14 +52,20 @@
                         </div>
                         <div class="navbar-collapse collapse d-sm-inline-flex flex-sm-row-reverse">
                             <ul class="navbar-nav">
-                                <li>
-                                    <a class="nav-link text-dark" asp-area="" asp-controller="Account" asp-action="Register"><b>Registrarse </b><i class="fas fa-angle-right"></i> </a>
+                                @if (!User.Identity.IsAuthenticated)
+                                {
+                                    <li>
+                                        <a class="nav-link text-dark" asp-area="" asp-controller="Account" asp-action="Register"><b>Registrarse </b><i class="fas fa-angle-right"></i> </a>
 
-                                </li>
-                                <li>
-                                    <a class="nav-link text-dark" asp-area="" asp-controller="Account" asp-action="Login"><b>Iniciar Sessión </b><i class=" fas fa-sign-in-alt"></i></a>
+                                    </li>
+                                }
+                                @if (User.Identity.IsAuthenticated)
+                                {
+                                    <li>
+                                        <a class="nav-link text-dark" asp-area="" asp-controller="Account" asp-action="Login"><b>Iniciar Sessión </b><i class=" fas fa-sign-in-alt"></i></a>
 
-                                </li>
+                                    </li>
+                                }
                             </ul>
                         </div>
                     </nav>

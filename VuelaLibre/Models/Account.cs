@@ -9,26 +9,26 @@ namespace VuelaLibre.Models
     public class Account
     {
         public int Id { get; set; }
-        [Required]
+        [Required(ErrorMessage = "El campo nombre es requerido.")]
         [MinLength(2)]
         [RegularExpression(@"[a-zA-Z]+")]
         public string Nombre { get; set; }
-        [Required]
+        [Required(ErrorMessage = "El campo apellido es requerido.")]
         [MinLength(2)]
         [RegularExpression(@"[a-zA-Z]+")]
         public string Apellido { get; set; }
-        [Required]
+        [Required(ErrorMessage ="El campo correo es requerido.")]
         [EmailAddress]
         public string Correo { get; set; }
-        [Required]
+        [Required(ErrorMessage ="El campo contraseña como mínimo debe contener al menos 6 caracteres.")]
         [MinLength(6)]
         [DataType(DataType.Password)]
         public string Contraseña { get; set; }
-        [Required]
+        [Required(ErrorMessage = "El campo Confirmar contraseña es obligatorio.")]
         [MinLength(6)]
         [DataType(DataType.Password)]
         [Display(Name = "Confirmar contraseña")]
-        [Compare("Contraseña", ErrorMessage = "las contraseñas no coinciden")]
+        [Compare("Contraseña", ErrorMessage = "Las contraseñas no coinciden.")]
         public string VerfContraseña { get; set; }
     }
 }
