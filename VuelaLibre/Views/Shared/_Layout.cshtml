@@ -1,4 +1,8 @@
-﻿<!DOCTYPE html>
+﻿@{ 
+    //List<Account> account = ((List<Account>)Model);
+    //var account = (Account)Model;
+}
+<!DOCTYPE html>
 <html lang="es">
 <head>
     <meta charset="utf-8" />
@@ -48,7 +52,7 @@
                                 <li class="nav-item">
                                     <a class="nav-link" asp-area="" asp-controller="Home" asp-action="">Aerolíneas</a>
                                 </li>
-                            </ul>
+                                </ul>
                         </div>
                         <div class="navbar-collapse collapse d-sm-inline-flex flex-sm-row-reverse">
                             <ul class="navbar-nav">
@@ -58,13 +62,23 @@
                                         <a class="nav-link text-dark" asp-area="" asp-controller="Account" asp-action="Register"><b>Registrarse </b><i class="fas fa-angle-right"></i> </a>
 
                                     </li>
-                                }
-                                @if (User.Identity.IsAuthenticated)
-                                {
+
                                     <li>
                                         <a class="nav-link text-dark" asp-area="" asp-controller="Account" asp-action="Login"><b>Iniciar Sessión </b><i class=" fas fa-sign-in-alt"></i></a>
 
                                     </li>
+                                }
+                                @if (User.Identity.IsAuthenticated)
+                                {
+                                    <li class="nav-item">
+                                        <a href="/account/logout" class="nav-link text-dark">@User.Claims.FirstOrDefault().Value</a>
+                                    </li>
+                                    if (@User.Claims.FirstOrDefault().Value == "admin@gmail.com")
+                                    {
+                                        <li class="nav-item">
+                                            <a href="/account/crearvuelo" class="nav-link text-dark">Crear Vuelo</a>
+                                        </li>
+                                    }
                                 }
                             </ul>
                         </div>
