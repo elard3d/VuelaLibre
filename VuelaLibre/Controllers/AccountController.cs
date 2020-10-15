@@ -162,5 +162,25 @@ namespace VuelaLibre.Controllers
             return Convert.ToBase64String(hash);
         }
 
+        [Authorize]
+        public ActionResult Comprar(Vuelo vuelo, int id)
+        {
+
+            var mostrar = _context.Vuelos.Where(o => o.Id == id).ToList();
+            if (mostrar != null)
+            {
+                return View(mostrar);
+            }
+            return View(vuelo);
+        }
+
+        public ActionResult Perfil ()
+        {
+
+            
+            return View();
+        }
+
+
     }
 }

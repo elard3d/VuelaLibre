@@ -30,6 +30,9 @@
             <div class="container">
                 <div class="row">
                     <nav class="navbar navbar-expand-lg narbar-light">
+
+
+
                         <a class="navbar-brand mr-auto" asp-area="" asp-controller="Account" asp-action="">
                             <img class="logo" src="~/img/logoOriginal.jpg">
 
@@ -37,7 +40,7 @@
                         <button type="button" id="nav-toggle" class="navbar-toggler collapsed" data-toggle="collapse" data-target="#mainNav" aria-expanded="false" aria-label="Toggle navigation">
                             <span class="navbar-toggler-icon"></span>
                         </button>
-                        <div id="mainNav" class="collapse navbar-collapse tm-bg-white">
+                        <div id="mainNav" class="collapse navbar-collapse tm-bg-white" >
                             <ul class="navbar-nav ml-auto">
                                 <li class="nav-item">
                                     <a class="nav-link" asp-area="" asp-controller="Account" asp-action="">Home</a>
@@ -54,7 +57,8 @@
                                 </li>
                                 </ul>
                         </div>
-                        <div class="navbar-collapse collapse d-sm-inline-flex flex-sm-row-reverse">
+
+                        <div class="collapse navbar-collapse tm-bg-white d-sm-inline-flex flex-sm-row-reverse" id="navbarNavDropdown">
                             <ul class="navbar-nav">
                                 @if (!User.Identity.IsAuthenticated)
                                 {
@@ -70,9 +74,22 @@
                                 }
                                 @if (User.Identity.IsAuthenticated)
                                 {
-                                    <li class="nav-item">
-                                        <a href="/account/logout" class="nav-link text-dark">@User.Claims.FirstOrDefault().Value</a>
+
+                                    <li>
+
+                                        <a class="nav-link text-dark" asp-area="" asp-controller="Account" asp-action="Logout"><b>LogOut </b></a>
+
+
                                     </li>
+
+                                    <li>
+
+                                        <a class="nav-link text-dark" asp-area="" asp-controller="Account" asp-action="Perfil"><b>@User.Claims.FirstOrDefault().Value</b></a>
+
+
+                                    </li>
+
+
                                     if (@User.Claims.FirstOrDefault().Value == "admin@gmail.com")
                                     {
                                         <li class="nav-item">
