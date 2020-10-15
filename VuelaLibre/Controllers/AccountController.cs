@@ -91,25 +91,28 @@ namespace VuelaLibre.Controllers
 
             return RedirectToAction("Index");
         }
-        private string CreateHash(string input)
-        {
-            var sha = SHA256.Create();
-            input += configuration.GetValue<string>("Token");
-            var hash = sha.ComputeHash(Encoding.Default.GetBytes(input));
-
-            return Convert.ToBase64String(hash);
-        }
         [HttpGet]
         public ActionResult CrearVuelo() // GET
         {
-            ViewBag.Flights = _context.ListVuelo.ToList();
-            ViewBag.Aerolinea = _context.Aerolineas.ToList();
-            return View("CrearVuelo");
+            ViewBag.Destinos = _context.ListVuelo.ToList();
+            ViewBag.Aerolineas = _context.Aerolineas.ToList();
+            ViewBag.fechas = DateTime.Now;
+            ViewBag.fecha = DateTime.Now;
+            return View("CrearVuelo", new Vuelo());
         }
 
         [HttpPost]
-        public ActionResult CrearVuelo(Vuelo vuel) // POST
+        public ActionResult CrearVuelo(Vuelo vuel, DateTime fechaida, DateTime fecharegreso) // POST
         {
+            var now = DateTime.Now;
+            int fechaResultado = DateTime.Compare(fechaida, now);
+            if (fechaResultado < 0)
+                ModelState.AddModelError("FechaIda", "La fecha de salida debe ser mayor a la actual");
+
+            var ahora = DateTime.Now;
+            int fechaResul = DateTime.Compare(fecharegreso, ahora);
+            if (fechaResul < 0)
+                ModelState.AddModelError("FechaRegreso", "La fecha de regreso debe ser mayor a la actual");
 
             if (ModelState.IsValid)
             {
@@ -117,7 +120,9 @@ namespace VuelaLibre.Controllers
                 _context.SaveChanges();
                 return RedirectToAction("Index");
             }
-            return View(vuel);
+            ViewBag.Destinos = _context.ListVuelo.ToList();
+            ViewBag.Aerolineas = _context.Aerolineas.ToList();
+            return View("CrearVuelo");
         }
 
         [HttpGet]
@@ -128,28 +133,33 @@ namespace VuelaLibre.Controllers
             return View(vuelo);
         }
         [HttpPost]
-        public ActionResult Buscar(Vuelo vuelo, string origen,string destino)
+        public ActionResult Buscar(Vuelo vuelo, string origen,string destino, DateTime fechaida, DateTime fecharegreso)
         {
-
-            var mostrar = _context.Vuelos.Where(o => o.Origen == origen && o.Destino==destino)
+            
+            var mostrar = _context.Vuelos.Where(o => o.Origen == origen && o.Destino == destino && o.FechaIda >= fechaida && o.FechaRegreso <= fecharegreso)
                 .ToList();
             if (mostrar != null)
             {
+                var now = DateTime.Now;
+                int fechaResultado = DateTime.Compare(fechaida, now);
+                if (fechaResultado < 0)
+                    ModelState.AddModelError("FechaIda", "La fecha de salida debe ser mayor a la actual");
+
+                var nowfecha = DateTime.Now;
+                int fechaResultados = DateTime.Compare(fecharegreso, nowfecha);
+                if (fechaResultados < 0)
+                    ModelState.AddModelError("FechaRegreso", "La fecha de regreso debe ser mayor a la actual");
                 return View(mostrar);
             }
-            return View(vuelo);
+            return View("Index", vuelo);
         }
+        private string CreateHash(string input)
+        {
+            var sha = SHA256.Create();
+            input += configuration.GetValue<string>("Token");
+            var hash = sha.ComputeHash(Encoding.Default.GetBytes(input));
 
-        [Authorize]
-   
-        public ActionResult Comprar(Vuelo vuelo, int id) {
-
-            var mostrar = _context.Vuelos.Where(o => o.Id == id ).ToList();
-            if (mostrar != null)
-            {
-                return View(mostrar);
-            }
-            return View(vuelo);
+            return Convert.ToBase64String(hash);
         }
 
     }

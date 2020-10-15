@@ -1,7 +1,4 @@
-﻿@{ 
-    var vuelo = (Vuelo)Model;
-}
-<body class="registro">
+﻿<body class="registro">
     <div class="tm-section tm-bg-img" id="tm-section-1">
         <div class="container text-md-center">
             <div class="row justify-content-center pt-5 mt-5 mr-1">
@@ -13,25 +10,27 @@
                         <div class="form-group mx-sm-4 ">
                             <select name="Origen" class="form-control-file text-center">
                                 <option value="">----- ORIGEN -----</option>
-                                @foreach (var item in ViewBag.Flights)
+                                @foreach (var item in ViewBag.Destinos)
                                 {
-                                    <option value="@item.Name">@item.Name</option>
+                                    <option value="@item.Name ">@item.Name</option>
                                 }
                             </select>
+                            @Html.ValidationMessage("Origen")
                         </div>
                         <div class="form-group mx-sm-4 pt-4">
                             <select name="Destino" class="form-control-file text-center">
                                 <option value="">----- DESTINO -----</option>
-                                @foreach (var item in ViewBag.Flights)
+                                @foreach (var item in ViewBag.Destinos)
                                 {
                                     <option value="@item.Name">@item.Name</option>
                                 }
                             </select>
+                            @Html.ValidationMessage("Destino")
                         </div>
                         <div class="form-group mx-sm-4 pt-4">
                             <select name="Aerolinea" class="form-control-file text-center">
                                 <option value="">----- Aerolineas -----</option>
-                                @foreach (var item in ViewBag.Aerolinea)
+                                @foreach (var item in ViewBag.Aerolineas)
                                 {
                                     <option value="@item.Name">@item.Name</option>
                                 }
@@ -39,11 +38,11 @@
                             @Html.ValidationMessage("Aerolinea")
                         </div>
                         <div class="form-group mx-sm-4 pt-4">
-                            <input type="datetime-local" name="FechaIda" class="form-control" placeholder="Fecha de salida" />
+                            <input type="datetime" name="FechaIda" value="@ViewBag.fechas" class="form-control" placeholder="Fecha de salida" />
                             @Html.ValidationMessage("FechaIda")
                         </div>
                         <div class="from-group mx-sm-4 pt-4">
-                            <input type="datetime-local" name="FechaRegreso" class="form-control" placeholder="Fecha de regreso" />
+                            <input type="datetime" name="FechaRegreso" value="@ViewBag.fecha" class="form-control" placeholder="Fecha de regreso" />
                             @Html.ValidationMessage("FechaRegreso")
                         </div>
                         <div class="form-group mx-sm-4 pt-4">
