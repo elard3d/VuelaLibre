@@ -13,20 +13,20 @@
                             <h3 class="titulo">Registrate </h3>
                         </div>
                         <div class="form-group mx-sm-4 ">
-                            <input type="text" name="Nombre" class="form-control" placeholder="Nombre" />
-                            @Html.ValidationMessage("Nombre")
+                            <input type="text" value="@account.Nombre" name="Nombre" class="form-control" placeholder="Nombre" />
+                            <span class="messageerror">@Html.ValidationMessage("Nombre")</span>
+</div>
+                        <div class="form-group mx-sm-4 pt-4">
+                            <input type="text" value="@account.Apellido" name="Apellido" class="form-control" placeholder="Apellidos" />
+                            <span class="messageerror">@Html.ValidationMessage("Apellido")</span>
+</div>
+                        <div class="form-group mx-sm-4 pt-4">
+                            <input type="text" value="@account.Correo" name="Correo" class="form-control" placeholder="Correo" />
+                            <span class="messageerror">@Html.ValidationMessage("Correo")</span>
                         </div>
                         <div class="form-group mx-sm-4 pt-4">
-                            <input type="text" name="Apellido" class="form-control" placeholder="Apellidos" />
-                            @Html.ValidationMessage("Apellido")
-                        </div>
-                        <div class="form-group mx-sm-4 pt-4">
-                            <input type="text" name="Correo" class="form-control" placeholder="Correo" />
-                            @Html.ValidationMessage("Correo")
-                        </div>
-                        <div class="form-group mx-sm-4 pt-4">
-                            <input type="password" name="Contraseña" class="form-control" placeholder="Contraseña" />
-                            @Html.ValidationMessage("Contraseña")
+                            <input type="password" value="@account.Contraseña" name="Contraseña" class="form-control" placeholder="Contraseña" />
+                            <span class="messageerror">@Html.ValidationMessage("Contraseña")</span>
                         </div>
                         <div class="form-group mx-sm-4 pt-4">
                             <input type="password" name="VerfContraseña" class="form-control" placeholder="Verfificar Contraseña" />

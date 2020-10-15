@@ -12,6 +12,8 @@ namespace VuelaLibre.Models
         //Esto se hace por cada tabla de base de datos
         public DbSet<Account> Accounts { get; set; }
         public DbSet<Vuelo> Vuelos { get; set; }
+        public DbSet<Flights> ListVuelo { get; set; }
+        public DbSet<Aerolinea> Aerolineas { get; set; }
 
         public VuelaLibreContext(DbContextOptions<VuelaLibreContext> options)
             : base(options) { }
@@ -23,6 +25,8 @@ namespace VuelaLibre.Models
             //Esto se hace por cada tabla de base de datos
             modelBuilder.ApplyConfiguration(new AccountMap());
             modelBuilder.ApplyConfiguration(new VueloMap());
+            modelBuilder.ApplyConfiguration(new FlightsMap());
+            modelBuilder.ApplyConfiguration(new AerolineaMap());
         }
     }
 }

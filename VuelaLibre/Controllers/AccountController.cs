@@ -27,14 +27,10 @@ namespace VuelaLibre.Controllers
         }
 
         [HttpGet]
-        public IActionResult Index()
+        public IActionResult Index(Account account)
         {
+            ViewBag.Accounts = _context.Accounts.ToList();
             return View("Index");
-        }
-        [HttpGet]
-        public string Indexx(string password)
-        {
-            return CreateHash(password);
         }
         [HttpGet]
         public ActionResult Register() // GET
@@ -43,15 +39,22 @@ namespace VuelaLibre.Controllers
         }
 
         [HttpPost]
-        public ActionResult Register(Account account, string contraseña, string verfcontraseña) // POST
+        public ActionResult Register(Account account, string contraseña, string correo, string verfcontraseña) // POST
         {
+            var correos = _context.Accounts.ToList();
+            foreach (var item in correos)
+            {
+                if (item.Correo == correo)
+                    ModelState.AddModelError("Correo","El correo ya existe, ingrese otro correo");
+            }
+            
             if (ModelState.IsValid)
             {
                 account.Contraseña = CreateHash(contraseña);
                 account.VerfContraseña = CreateHash(verfcontraseña);
                 _context.Accounts.Add(account);
                 _context.SaveChanges();
-                return RedirectToAction("Index");
+                return RedirectToAction("Login");
             }
             return View("Register", account);
         }
@@ -61,7 +64,7 @@ namespace VuelaLibre.Controllers
             return View();
         }
         [HttpPost]
-        public IActionResult Login(string Correo, string Contraseña)
+        public IActionResult Login(Account account, string Correo, string Contraseña)
         {
             var user = _context.Accounts.Where(o => o.Correo == Correo && o.Contraseña == CreateHash(Contraseña))
                 .FirstOrDefault();
@@ -86,7 +89,7 @@ namespace VuelaLibre.Controllers
         {
             HttpContext.SignOutAsync();
 
-            return RedirectToAction("Login");
+            return RedirectToAction("Index");
         }
         private string CreateHash(string input)
         {
@@ -99,7 +102,9 @@ namespace VuelaLibre.Controllers
         [HttpGet]
         public ActionResult CrearVuelo() // GET
         {
-            return View(new Vuelo());
+            ViewBag.Flights = _context.ListVuelo.ToList();
+            ViewBag.Aerolinea = _context.Aerolineas.ToList();
+            return View("CrearVuelo");
         }
 
         [HttpPost]
