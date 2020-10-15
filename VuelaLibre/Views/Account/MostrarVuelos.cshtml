@@ -21,6 +21,7 @@
                             <th>Fecha de Llegada / Hora</th>
                             <th>Cantidad de Pasajeros</th>
                             <th>Precio</th>
+                            <th></th>
                         </tr>
                     </thead>
 
@@ -37,6 +38,8 @@
                                 <td>@item.FechaRegreso <i class="fa fas fa-plane-arrival tm-color-primary tm-margin-b-20"></i> </td>
                                 <td>@item.TotalPasaje <i class="fa fas fa-users tm-color-primary  tm-margin-b-20"></i> </td>
                                 <td>$ @item.Precio <i class="fa fas fa-money-bill tm-color-primary tm-margin-b-20"></i> </td>
+                                
+                                <td> <a href="/Account/comprar?id=@item.Id">Comprar</a></td>
                             </tr>
                         }
 
