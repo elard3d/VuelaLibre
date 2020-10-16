@@ -1,10 +1,9 @@
 ﻿@{
-    List<Vuelo> vuelo = ((List<Vuelo>)Model);
+    //List<Vuelo> vuelo = ((List<Vuelo>)Model);
+    var vuelo = (Vuelo)Model;
     //var vuelos = ((List<Vuelo>)ViewBag.vuelo);
     //var vuelo = (Vuelo)Model;
 }
-
-
 
 <div class="tm-section tm-bg-img" id="tm-section-1" style="padding:5%">
 
@@ -12,33 +11,32 @@
 
         <div class="container ie-h-align-center-fix" style="padding:5%">
 
-            @foreach (var item in vuelo)
-            {
-                <form action="/action_page.php" class="was-validated">
+            
+                <form action="/account/comprar" method="post"  class="was-validated">
                     <div class="row">
 
-                        <div class="col-12 col-md-8" style="border-style:solid" >
+                        <div class="col-12 col-md-8" style="border-style:solid">
 
                             <div class="container" style="padding:3%; text-align:center">
 
                                 <h3>DATOS DEL PASASJE</h3>
 
                             </div>
-
+                            <input type="hidden" name="id" value="@vuelo.Id">
                             <div class="row" style=" font-size: 200%">
                                 <div class="col-6 col-md-4" style="padding: 3%;">
                                     <div style="font-size: 80%">Origen: </div>
-                                    <b>@item.Origen </b>
+                                    <b>@vuelo.Origen </b>
                                     <i class="fa fas fa-plane-departure tm-color-primary tm-margin-b-20"></i>
                                 </div>
                                 <div class="col-6 col-md-4" style="padding: 3%;">
                                     <div style="font-size: 80%">Destino: </div>
-                                    <b>@item.Destino </b>
+                                    <b>@vuelo.Destino </b>
                                     <i class="fa fas fa-plane-arrival tm-color-primary tm-margin-b-20"></i>
                                 </div>
                                 <div class="col-6 col-md-4" style="padding: 3%;">
                                     <div style="font-size: 80%">Aerolinea: </div>
-                                    <b>@item.Aerolinea </b>
+                                    <b>@vuelo.Aerolinea </b>
                                     <i class="fa fas fa-plane tm-color-primary tm-margin-b-20"></i>
                                 </div>
                             </div>
@@ -46,17 +44,17 @@
                             <div class="row" style=" font-size: 200%">
                                 <div class="col-6 col-md-4" style="padding: 3%;">
                                     <div style="font-size: 80%">Fecha/Hr. Salida: </div>
-                                    <b>@item.FechaIda </b>
+                                    <b>@vuelo.FechaIda </b>
                                     <i class="fa fas fa-plane-departure tm-color-primary tm-margin-b-20"></i>
                                 </div>
                                 <div class="col-6 col-md-4" style="padding: 3%;">
                                     <div style="font-size: 80%">Fecha/Hr. Llegada: </div>
-                                    <b>@item.FechaRegreso </b>
+                                    <b>@vuelo.FechaRegreso </b>
                                     <i class="fa fas fa-plane-arrival tm-color-primary tm-margin-b-20"></i>
                                 </div>
                                 <div class="col-6 col-md-4" style="padding: 3%;">
                                     <div style="font-size: 80%">Precio: </div>
-                                    <b>$ @item.Precio </b>
+                                    <b>$ @vuelo.Precio </b>
                                     <i class="fa fas fa-money-bill tm-color-primary tm-margin-b-20"></i>
                                 </div>
                             </div>
@@ -73,7 +71,7 @@
 
                             <div class="form-group">
                                 <label for="nombre">DNI:</label>
-                                <input type="text" class="form-control" id="uname" placeholder="Numero de DNI" name="DNi" required>
+                                <input type="text" class="form-control" id="uname" placeholder="Numero de DNI" name="dni" required>
                                 <div class="valid-feedback">Valido.</div>
                                 <div class="invalid-feedback">Porfavor Llenar esta casilla.</div>
                             </div>
@@ -85,7 +83,7 @@
                             </div>
                             <div class="form-group">
                                 <label for="pwd">Apellidos:</label>
-                                <input type="text" class="form-control" id="apellido" placeholder="Apellidos" name="apellido" required>
+                                <input type="text" class="form-control" id="apellido" placeholder="Apellidos" name="apellidos" required>
                                 <div class="valid-feedback">Valido.</div>
                                 <div class="invalid-feedback">Porfavor Llenar esta casilla.</div>
                             </div>
@@ -93,10 +91,10 @@
                             <div class="form-group">
 
                                 <label>Numero de Asiento: </label>
-                                <select name="Type" class="form-control">
-                                    <option value="A1"> A1</option>
-                                    <option value="A2"> A2</option>
-                                    <option value="A3"> A3</option>
+                                <select name="Npasajes" class="form-control">
+                                    <option value="1"> 1</option>
+                                    <option value="2"> 2</option>
+                                    <option value="3"> 3</option>
 
                                 </select>
 
@@ -114,7 +112,7 @@
                     </div>
 
                 </form>
-            }
+            
 
 
 

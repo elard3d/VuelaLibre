@@ -78,8 +78,9 @@ namespace VuelaLibre.Controllers
                 var claimsPrincipal = new ClaimsPrincipal(claimsIdentity);
 
                 HttpContext.SignInAsync(claimsPrincipal);
-
-                return RedirectToAction("Index", "Account");
+                ViewBag.userid = user.Id;
+                
+                return RedirectToAction("Index");
             }
             ModelState.AddModelError("Login", "Usuario o contraseña incorrectos.");
             return View();
@@ -133,7 +134,7 @@ namespace VuelaLibre.Controllers
             return View(vuelo);
         }
         [HttpPost]
-        public ActionResult Buscar(Vuelo vuelo, string origen,string destino, DateTime fechaida, DateTime fecharegreso)
+        public ActionResult Buscar(Vuelo vuelo, string origen,string destino, DateTime fechaida, DateTime fecharegreso, int userid)
         {
             
             var mostrar = _context.Vuelos.Where(o => o.Origen == origen && o.Destino == destino && o.FechaIda >= fechaida && o.FechaRegreso <= fecharegreso)
@@ -149,6 +150,7 @@ namespace VuelaLibre.Controllers
                 int fechaResultados = DateTime.Compare(fecharegreso, nowfecha);
                 if (fechaResultados < 0)
                     ModelState.AddModelError("FechaRegreso", "La fecha de regreso debe ser mayor a la actual");
+                ViewBag.userid = userid;
                 return View(mostrar);
             }
             return View("Index", vuelo);
@@ -163,21 +165,51 @@ namespace VuelaLibre.Controllers
         }
 
         [Authorize]
-        public ActionResult Comprar(Vuelo vuelo, int id)
+        [HttpGet]
+        public ActionResult Comprar(Vuelo vuelo)
+        {
+            var vuelos = _context.Vuelos.Where(o=>o.Id==vuelo.Id).FirstOrDefault();
+          
+            return View(vuelos);
+        }
+        [Authorize]
+        [HttpPost]
+        public ActionResult Comprar(Vuelo vuelo, int id, int userid, string dni, string nombre, string apellidos, int Npasajes)
         {
 
             var mostrar = _context.Vuelos.Where(o => o.Id == id).ToList();
-            if (mostrar != null)
+            var vuel = _context.Vuelos.Where(o => o.Id == id).FirstOrDefault();
+            var account = _context.Accounts.Where(o => o.Id == userid).FirstOrDefault();
+            var detallev = new DetalleVuelo();
+            
+            if (vuel!=null)
             {
-                return View(mostrar);
+                detallev.UserId = userid;
+                detallev.Aerolinea = vuel.Aerolinea;
+                detallev.Nombres = nombre;
+                detallev.Apellidos = apellidos;
+                detallev.Dni = dni;
+                detallev.precio = (vuel.TotalPasaje * Npasajes);
+                detallev.Nasientos = Npasajes;
+                detallev.Origen = vuel.Origen;
+                detallev.Destino = vuel.Destino;
+                detallev.FechaLlegada = vuel.FechaRegreso;
+                detallev.FechaSalida = vuel.FechaIda;
+                //
+                _context.DetalleVuelos.Add(detallev);
+                _context.SaveChanges();
+                //detallev.Apellidos
+
+                //_context.DetalleVuelos.Add(detallev);
+
+                return RedirectToAction("Index");
             }
-            return View(vuelo);
+            return View("comprar", new Vuelo()) ;
         }
 
         public ActionResult Perfil ()
         {
 
-            
             return View();
         }
 

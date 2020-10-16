@@ -9,7 +9,7 @@
     <div class="tm-bg-white">
 
         <div class="table-responsive">
-
+            <input name="userid" type="hidden" value="@ViewBag.userid">
             <div class="container ie-h-align-center-fix">
                 <table class="table table-striped">
                     <thead>
@@ -39,7 +39,7 @@
                                 <td>@item.TotalPasaje <i class="fa fas fa-users tm-color-primary  tm-margin-b-20"></i> </td>
                                 <td>$ @item.Precio <i class="fa fas fa-money-bill tm-color-primary tm-margin-b-20"></i> </td>
                                 <td>
-                                    <a href="/compra/registro">Comprar</a>
+                                    <a href="/account/comprar?userid=@ViewBag.userid">Comprar</a>
                                 </td>
                             </tr>
                         }
