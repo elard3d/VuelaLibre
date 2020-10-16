@@ -14,6 +14,7 @@ namespace VuelaLibre.Models
         public DbSet<Vuelo> Vuelos { get; set; }
         public DbSet<Flights> ListVuelo { get; set; }
         public DbSet<Aerolinea> Aerolineas { get; set; }
+        public DbSet<DetalleVuelo> DetalleVuelos { get; set; }
 
         public VuelaLibreContext(DbContextOptions<VuelaLibreContext> options)
             : base(options) { }
@@ -27,6 +28,7 @@ namespace VuelaLibre.Models
             modelBuilder.ApplyConfiguration(new VueloMap());
             modelBuilder.ApplyConfiguration(new FlightsMap());
             modelBuilder.ApplyConfiguration(new AerolineaMap());
+            modelBuilder.ApplyConfiguration(new DetalleVueloMap());
         }
     }
 }
