@@ -174,10 +174,12 @@ namespace VuelaLibre.Controllers
             return View(vuelo);
         }
 
+        
+
         public ActionResult Perfil ()
         {
+            ViewBag.Accounts = _context.Accounts.ToList();
 
-            
             return View();
         }
 
