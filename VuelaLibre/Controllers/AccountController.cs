@@ -207,8 +207,11 @@ namespace VuelaLibre.Controllers
             return View("comprar", new Vuelo()) ;
         }
 
+        
+
         public ActionResult Perfil ()
         {
+            ViewBag.Accounts = _context.Accounts.ToList();
 
             return View();
         }
